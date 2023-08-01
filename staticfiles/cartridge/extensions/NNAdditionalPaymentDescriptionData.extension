@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extensionpoint:ExtensionPointModel xmlns:extensionpoint="http://www.intershop.de/extensionpoint/2011"
+    name="NNAdditionalPaymentDescriptionData">
+  <extensionBindings type="isml" extensionPoint="checkout/payment/CheckoutPayment-AdditionalPaymentServiceDescriptionData" extension="payment_novalnet/NovalnetAdditionalPaymentDescription" priority="20"/>
+</extensionpoint:ExtensionPointModel>

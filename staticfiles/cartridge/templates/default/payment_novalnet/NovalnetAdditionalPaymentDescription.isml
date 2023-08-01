@@ -1,0 +1,39 @@
+<!---[Comment]--->
+<iscontent type="text/html" charset="UTF-8" compact="true">
+<link rel="STYLESHEET" type="text/css" href="#WebRoot()#/css/novalnet.css" />
+<%@page import="com.intershop.component.service.capi.service.ServiceConfigurationBO"%>
+<isif condition="#pad(PaymentServiceBO:PaymentServiceID,-8) EQ 'NOVALNET'#">
+	<isif condition="#PaymentServiceBO:Extension("HostedPaymentPage") NE NULL#">
+		<isset name="novalnetPaymentData" value="#PaymentServiceBO:Extension("HostedPaymentPage")#" scope="request" />
+		<isset scope="request" name="nnAdditionalNoteKey" value="#PaymentServiceBO:PaymentServiceID.'.additionalNote'#">
+		<isset scope="request" name="nnAdditionalNoteValue" value="#novalnetPaymentData:Content(PaymentServiceBO,CurrentCartBO, nnAdditionalNoteKey)#">
+		<isif condition="#(isDefined(nnAdditionalNoteValue)) AND (nnAdditionalNoteValue NE "")#">
+			<p><isprint value="#nnAdditionalNoteValue#"></p>
+		</isif>
+		<isset scope="request" name="nnTestmodeKey" value="#PaymentServiceBO:PaymentServiceID.'.testMode'#">
+		<isset scope="request" name="nnTestmodeValue" value="#novalnetPaymentData:Content(PaymentServiceBO,CurrentCartBO, nnTestmodeKey)#">
+		<isif condition="#(isDefined(nnTestmodeValue)) AND (nnTestmodeValue EQ "1")#">
+			<div class="nn-test-mode"><span>#localizeText('novalnet.checkout_testmode')#</span></div>
+		</isif>
+	</isif>
+
+	<isset scope="request" name="paymentName" value="#split(PaymentServiceBO:PaymentServiceID, '_')#">
+		<isloop iterator="paymentName" alias="logoName">
+		  <isif condition="#NOT(hasNext(logoName))#">
+		  		<isif condition="#PaymentServiceBO:PaymentServiceID EQ 'NOVALNET_CREDITCARD'#">
+		  			<img src="#WebRoot()#/images/amex.png" alt="AMEX"/> 
+					<img src="#WebRoot()#/images/mastercard.png" alt="MASTERCARD"/>
+					<img src="#WebRoot()#/images/visa.png" alt="VISA"/>
+					<img src="#WebRoot()#/images/maestro.png" alt="MAESTRO"/>
+					<img src="#WebRoot()#/images/cartasi.png" alt="CARTASI"/>
+					<img src="#WebRoot()#/images/carte_bleue.png" alt="CARTE BLEUE"/>
+					<img src="#WebRoot()#/images/diners.png" alt="DINERS"/>
+					<img src="#WebRoot()#/images/discover.png" alt="DISCOVER"/>
+					<img src="#WebRoot()#/images/jcb.png" alt="JCB"/>
+					<img src="#WebRoot()#/images/unionpay.png" alt="UNIONPAY"/>
+		  		<iselse>
+		  			<img src="#WebRoot()#/images/#lcase(logoName)#.png" alt="#logoName#"/>
+		  		</isif>
+		  </isif>
+		</isloop>
+</isif>

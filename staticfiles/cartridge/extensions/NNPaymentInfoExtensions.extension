@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extensionpoint:ExtensionPointModel xmlns:extensionpoint="http://www.intershop.de/extensionpoint/2011"
+    name="NNPaymentInfoExtensions">
+  <extensionBindings type="isml" extensionPoint="account/orders/PaymentWidget-PaymentInfoExtensions"
+      extension="payment_novalnet/NovalnetTransactionDetails" priority="20"/>
+</extensionpoint:ExtensionPointModel>

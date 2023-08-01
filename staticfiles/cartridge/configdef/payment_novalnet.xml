@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.intershop.com/xml/ns/enfinity/7.0/configdef">
+	<group name="NovalnetGlobalConfigPaymentService">   
+		<parameter name="NovalnetGlobalConfigPaymentServiceDefinition.ProductActivationKey" type="String" position="1" required="true">
+	        	<labelKey>serviceparam.predef.novalnetglobalconfig.label.productactivationkey</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnetglobalconfig.desc.productactivationkey</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetGlobalConfigPaymentServiceDefinition.PaymentAccessKey" type="String" position="2" required="true">
+		        <labelKey>serviceparam.predef.novalnetglobalconfig.label.paymentaccesskey</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnetglobalconfig.desc.paymentaccesskey</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetGlobalConfigPaymentServiceDefinition.TariffID" type="String" position="3" required="true">
+		        <labelKey>serviceparam.predef.novalnetglobalconfig.label.tariffid</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnetglobalconfig.desc.tariffid</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetGlobalConfigPaymentServiceDefinition.WebhookTestMode" type="Boolean" position="4" required="false">
+		        <labelKey>serviceparam.predef.novalnetglobalconfig.label.webhooktestmode</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnetglobalconfig.desc.webhooktestmode</descriptionKey>
+		</parameter>
+	</group>
+	<group name="NovalnetCreditcardPaymentService">   
+		<parameter name="NovalnetCreditcardPaymentServiceDefinition.TestMode" type="Boolean" position="1" required="false">
+		        <labelKey>serviceparam.predef.novalnetcreditcard.label.testmode</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnetcreditcard.desc.testmode</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetCreditcardPaymentServiceDefinition.PaymentAction" type="String" position="2" required="false">
+			<labelKey>serviceparam.predef.novalnetcreditcard.label.paymentaction</labelKey>
+       			<descriptionKey>serviceparam.predef.novalnetcreditcard.desc.paymentaction</descriptionKey>
+			<predefined value="authorize" default="false" position="10">
+				<valueKey>serviceparam.predef.novalnetcreditcard.label.authorize</valueKey>
+			</predefined>
+			<predefined value="capture" default="true" position="20">
+				<valueKey>serviceparam.predef.novalnetcreditcard.label.capture</valueKey>
+			</predefined>
+		</parameter>
+		<parameter name="NovalnetCreditcardPaymentServiceDefinition.AuthorizationMinAmount" type="String" position="3" required="false">
+			<labelKey>serviceparam.predef.novalnetcreditcard.label.authorizationminamount</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetcreditcard.desc.authorizationminamount</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetCreditcardPaymentServiceDefinition.Enforce3D" type="Boolean" position="4" required="false">
+		        <labelKey>serviceparam.predef.novalnetcreditcard.label.enforce3d</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnetcreditcard.desc.enforce3d</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetCreditcardPaymentServiceDefinition.PaymentDescription" type="String" position="5" required="false">
+		        <labelKey>serviceparam.predef.novalnetcreditcard.label.paymentdescription</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnetcreditcard.desc.paymentdescription</descriptionKey>
+		</parameter>
+	</group>
+    <group name="NovalnetIdealPaymentService">   
+		<parameter name="NovalnetIdealPaymentServiceDefinition.TestMode" type="Boolean" position="1" required="false">
+			<labelKey>serviceparam.predef.novalnetideal.label.testmode</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetideal.desc.testmode</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetIdealPaymentServiceDefinition.PaymentDescription" type="String" position="2" required="false">
+		        <labelKey>serviceparam.predef.novalnetideal.label.paymentdescription</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnetideal.desc.paymentdescription</descriptionKey>
+		</parameter>
+	</group>
+	<group name="NovalnetTrustlyPaymentService">   
+		<parameter name="NovalnetTrustlyPaymentServiceDefinition.TestMode" type="Boolean" position="1" required="false">
+			<labelKey>serviceparam.predef.novalnettrustly.label.testmode</labelKey>
+			<descriptionKey>serviceparam.predef.novalnettrustly.desc.testmode</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetTrustlyPaymentServiceDefinition.PaymentDescription" type="String" position="2" required="false">
+		        <labelKey>serviceparam.predef.novalnettrustly.label.paymentdescription</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnettrustly.desc.paymentdescription</descriptionKey>
+		</parameter>
+	</group>
+        <group name="NovalnetInvoicePaymentService">   
+		<parameter name="NovalnetInvoicePaymentServiceDefinition.TestMode" type="Boolean" position="1" required="false">
+			<labelKey>serviceparam.predef.novalnetinvoice.label.testmode</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetinvoice.desc.testmode</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetInvoicePaymentServiceDefinition.PaymentAction" type="String" position="2" required="false">
+			<labelKey>serviceparam.predef.novalnetinvoice.label.paymentaction</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetinvoice.desc.paymentaction</descriptionKey>
+			<predefined value="authorize" default="false" position="10">
+				<valueKey>serviceparam.predef.novalnetinvoice.label.authorize</valueKey>
+			</predefined>
+			<predefined value="capture" default="true" position="20">
+				<valueKey>serviceparam.predef.novalnetinvoice.label.capture</valueKey>
+			</predefined>
+		</parameter>
+		<parameter name="NovalnetInvoicePaymentServiceDefinition.AuthorizationMinAmount" type="String" position="3" required="false">
+			<labelKey>serviceparam.predef.novalnetinvoice.label.authorizationminamount</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetinvoice.desc.authorizationminamount</descriptionKey>
+		</parameter>
+        <parameter name="NovalnetInvoicePaymentServiceDefinition.DueDate" type="Integer" position="4" required="false">
+			<labelKey>serviceparam.predef.novalnetinvoice.label.duedate</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetinvoice.desc.duedate</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetInvoicePaymentServiceDefinition.PaymentDescription" type="String" position="5" required="false">
+		        <labelKey>serviceparam.predef.novalnetinvoice.label.paymentdescription</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnetinvoice.desc.paymentdescription</descriptionKey>
+		</parameter>
+	</group>
+
+	<group name="NovalnetSofortPaymentService">   
+		<parameter name="NovalnetSofortPaymentServiceDefinition.TestMode" type="Boolean" position="1" required="false">
+			<labelKey>serviceparam.predef.novalnetsofort.label.testmode</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetsofort.desc.testmode</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetSofortPaymentServiceDefinition.PaymentDescription" type="String" position="2" required="false">
+		        <labelKey>serviceparam.predef.novalnetsofort.label.paymentdescription</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnetsofort.desc.paymentdescription</descriptionKey>
+		</parameter>
+	</group>
+	<group name="NovalnetBanktransferPaymentService">   
+		<parameter name="NovalnetBanktransferPaymentServiceDefinition.TestMode" type="Boolean" position="1" required="false">
+			<labelKey>serviceparam.predef.novalnetbanktransfer.label.testmode</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetbanktransfer.desc.testmode</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetBanktransferPaymentServiceDefinition.PaymentDescription" type="String" position="2" required="false">
+		        <labelKey>serviceparam.predef.novalnetbanktransfer.label.paymentdescription</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnetbanktransfer.desc.paymentdescription</descriptionKey>
+		</parameter>
+	</group>
+
+	<group name="NovalnetEpsPaymentService">   
+		<parameter name="NovalnetEpsPaymentServiceDefinition.TestMode" type="Boolean" position="1" required="false">
+			<labelKey>serviceparam.predef.novalneteps.label.testmode</labelKey>
+			<descriptionKey>serviceparam.predef.novalneteps.desc.testmode</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetEpsPaymentServiceDefinition.PaymentDescription" type="String" position="2" required="false">
+		        <labelKey>serviceparam.predef.novalneteps.label.paymentdescription</labelKey>
+		        <descriptionKey>serviceparam.predef.novalneteps.desc.paymentdescription</descriptionKey>
+		</parameter>
+	</group>
+
+	<group name="NovalnetGiropayPaymentService">   
+		<parameter name="NovalnetGiropayPaymentServiceDefinition.TestMode" type="Boolean" position="1" required="false">
+			<labelKey>serviceparam.predef.novalnetgiropay.label.testmode</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetgiropay.desc.testmode</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetGiropayPaymentServiceDefinition.PaymentDescription" type="String" position="2" required="false">
+		        <labelKey>serviceparam.predef.novalnetgiropay.label.paymentdescription</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnetgiropay.desc.paymentdescription</descriptionKey>
+		</parameter>
+	</group>
+
+	<group name="NovalnetPostfinancecardPaymentService">   
+		<parameter name="NovalnetPostfinancecardPaymentServiceDefinition.TestMode" type="Boolean" position="1" required="false">
+			<labelKey>serviceparam.predef.novalnetpostfinancecard.label.testmode</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetpostfinancecard.desc.testmode</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetPostfinancecardPaymentServiceDefinition.PaymentDescription" type="String" position="2" required="false">
+		        <labelKey>serviceparam.predef.novalnetpostfinancecard.label.paymentdescription</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnetpostfinancecard.desc.paymentdescription</descriptionKey>
+		</parameter>
+	</group>
+
+	<group name="NovalnetPostfinancePaymentService">   
+		<parameter name="NovalnetPostfinancePaymentServiceDefinition.TestMode" type="Boolean" position="1" required="false">
+			<labelKey>serviceparam.predef.novalnetpostfinance.label.testmode</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetpostfinance.desc.testmode</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetPostfinancePaymentServiceDefinition.PaymentDescription" type="String" position="2" required="false">
+		        <labelKey>serviceparam.predef.novalnetpostfinance.label.paymentdescription</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnetpostfinance.desc.paymentdescription</descriptionKey>
+		</parameter>
+	</group>
+
+	<group name="NovalnetPrzelewyPaymentService">   
+		<parameter name="NovalnetPrzelewyPaymentServiceDefinition.TestMode" type="Boolean" position="1" required="false">
+			<labelKey>serviceparam.predef.novalnetprzelewy.label.testmode</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetprzelewy.desc.testmode</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetPrzelewyPaymentServiceDefinition.PaymentDescription" type="String" position="2" required="false">
+		        <labelKey>serviceparam.predef.novalnetprzelewy.label.paymentdescription</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnetprzelewy.desc.paymentdescription</descriptionKey>
+		</parameter>
+	</group>
+
+	<group name="NovalnetBancontactPaymentService">   
+		<parameter name="NovalnetBancontactPaymentServiceDefinition.TestMode" type="Boolean" position="1" required="false">
+			<labelKey>serviceparam.predef.novalnetbancontact.label.testmode</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetbancontact.desc.testmode</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetBancontactPaymentServiceDefinition.PaymentDescription" type="String" position="2" required="false">
+		        <labelKey>serviceparam.predef.novalnetbancontact.label.paymentdescription</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnetbancontact.desc.paymentdescription</descriptionKey>
+		</parameter>
+	</group>
+
+	<group name="NovalnetMultibancoPaymentService">   
+		<parameter name="NovalnetMultibancoPaymentServiceDefinition.TestMode" type="Boolean" position="1" required="false">
+			<labelKey>serviceparam.predef.novalnetmultibanco.label.testmode</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetmultibanco.desc.testmode</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetMultibancoPaymentServiceDefinition.PaymentDescription" type="String" position="2" required="false">
+		        <labelKey>serviceparam.predef.novalnetmultibanco.label.paymentdescription</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnetmultibanco.desc.paymentdescription</descriptionKey>
+		</parameter>
+	</group>
+
+	<group name="NovalnetCashpaymentPaymentService">   
+		<parameter name="NovalnetCashpaymentPaymentServiceDefinition.TestMode" type="Boolean" position="1" required="false">
+			<labelKey>serviceparam.predef.novalnetcashpayment.label.testmode</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetcashpayment.desc.testmode</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetCashpaymentPaymentServiceDefinition.DueDate" type="Integer" position="2" required="false">
+			<labelKey>serviceparam.predef.novalnetcashpayment.label.duedate</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetcashpayment.desc.duedate</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetCashpaymentPaymentServiceDefinition.PaymentDescription" type="String" position="3" required="false">
+		        <labelKey>serviceparam.predef.novalnetcashpayment.label.paymentdescription</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnetcashpayment.desc.paymentdescription</descriptionKey>
+		</parameter>
+	</group>
+
+	<group name="NovalnetPrepaymentPaymentService">   
+		<parameter name="NovalnetPrepaymentPaymentServiceDefinition.TestMode" type="Boolean" position="1" required="false">
+			<labelKey>serviceparam.predef.novalnetprepayment.label.testmode</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetprepayment.desc.testmode</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetPrepaymentPaymentServiceDefinition.DueDate" type="Integer" position="2" required="false">
+			<labelKey>serviceparam.predef.novalnetprepayment.label.duedate</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetprepayment.desc.duedate</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetPrepaymentPaymentServiceDefinition.PaymentDescription" type="String" position="3" required="false">
+		        <labelKey>serviceparam.predef.novalnetprepayment.label.paymentdescription</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnetprepayment.desc.paymentdescription</descriptionKey>
+		</parameter>
+	</group>
+
+	<group name="NovalnetPaypalPaymentService">   
+		<parameter name="NovalnetPaypalPaymentServiceDefinition.TestMode" type="Boolean" position="1" required="false">
+			<labelKey>serviceparam.predef.novalnetpaypal.label.testmode</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetpaypal.desc.testmode</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetPaypalPaymentServiceDefinition.PaymentAction" type="String" position="2" required="false">
+			<labelKey>serviceparam.predef.novalnetpaypal.label.paymentaction</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetpaypal.desc.paymentaction</descriptionKey>
+			<predefined value="authorize" default="false" position="10">
+				<valueKey>serviceparam.predef.novalnetpaypal.label.authorize</valueKey>
+			</predefined>
+			<predefined value="capture" default="true" position="20">
+				<valueKey>serviceparam.predef.novalnetpaypal.label.capture</valueKey>
+			</predefined>
+		</parameter>
+		<parameter name="NovalnetPaypalPaymentServiceDefinition.AuthorizationMinAmount" type="String" position="3" required="false">
+			<labelKey>serviceparam.predef.novalnetpaypal.label.authorizationminamount</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetpaypal.desc.authorizationminamount</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetPaypalPaymentServiceDefinition.PaymentDescription" type="String" position="4" required="false">
+		        <labelKey>serviceparam.predef.novalnetpaypal.label.paymentdescription</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnetpaypal.desc.paymentdescription</descriptionKey>
+		</parameter>
+	</group>
+
+	<group name="NovalnetSepaPaymentService">   
+		<parameter name="NovalnetSepaPaymentServiceDefinition.TestMode" type="Boolean" position="1" required="false">
+			<labelKey>serviceparam.predef.novalnetsepa.label.testmode</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetsepa.desc.testmode</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetSepaPaymentServiceDefinition.PaymentAction" type="String" position="2" required="false">
+			<labelKey>serviceparam.predef.novalnetsepa.label.paymentaction</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetsepa.desc.paymentaction</descriptionKey>
+			<predefined value="authorize" default="false" position="10">
+				<valueKey>serviceparam.predef.novalnetsepa.label.authorize</valueKey>
+			</predefined>
+			<predefined value="capture" default="true" position="20">
+				<valueKey>serviceparam.predef.novalnetsepa.label.capture</valueKey>
+			</predefined>
+		</parameter>
+		<parameter name="NovalnetSepaPaymentServiceDefinition.AuthorizationMinAmount" type="String" position="3" required="false">
+			<labelKey>serviceparam.predef.novalnetsepa.label.authorizationminamount</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetsepa.desc.authorizationminamount</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetSepaPaymentServiceDefinition.DueDate" type="Integer" position="4" required="false">
+			<labelKey>serviceparam.predef.novalnetsepa.label.duedate</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetsepa.desc.duedate</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetSepaPaymentServiceDefinition.PaymentDescription" type="String" position="5" required="false">
+		        <labelKey>serviceparam.predef.novalnetsepa.label.paymentdescription</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnetsepa.desc.paymentdescription</descriptionKey>
+		</parameter>
+	</group>
+
+	<group name="NovalnetGuaranteedsepaPaymentService">   
+		<parameter name="NovalnetGuaranteedsepaPaymentServiceDefinition.TestMode" type="Boolean" position="1" required="false">
+			<labelKey>serviceparam.predef.novalnetguaranteedsepa.label.testmode</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetguaranteedsepa.desc.testmode</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetGuaranteedsepaPaymentServiceDefinition.PaymentAction" type="String" position="2" required="false">
+			<labelKey>serviceparam.predef.novalnetguaranteedsepa.label.paymentaction</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetguaranteedsepa.desc.paymentaction</descriptionKey>
+			<predefined value="authorize" default="false" position="10">
+				<valueKey>serviceparam.predef.novalnetguaranteedsepa.label.authorize</valueKey>
+			</predefined>
+			<predefined value="capture" default="true" position="20">
+				<valueKey>serviceparam.predef.novalnetguaranteedsepa.label.capture</valueKey>
+			</predefined>
+		</parameter>
+		<parameter name="NovalnetGuaranteedsepaPaymentServiceDefinition.AuthorizationMinAmount" type="String" position="3" required="false">
+			<labelKey>serviceparam.predef.novalnetguaranteedsepa.label.authorizationminamount</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetguaranteedsepa.desc.authorizationminamount</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetGuaranteedsepaPaymentServiceDefinition.GuaranteedMinAmount" type="String" position="4" required="false">
+			<labelKey>serviceparam.predef.novalnetguaranteedsepa.label.guaranteedminamount</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetguaranteedsepa.desc.guaranteedminamount</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetGuaranteedsepaPaymentServiceDefinition.PaymentDescription" type="String" position="5" required="false">
+		        <labelKey>serviceparam.predef.novalnetguaranteedsepa.label.paymentdescription</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnetguaranteedsepa.desc.paymentdescription</descriptionKey>
+		</parameter>
+	</group>
+
+	<group name="NovalnetGuaranteedinvoicePaymentService">   
+		<parameter name="NovalnetGuaranteedinvoicePaymentServiceDefinition.TestMode" type="Boolean" position="1" required="false">
+			<labelKey>serviceparam.predef.novalnetguaranteedinvoice.label.testmode</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetguaranteedinvoice.desc.testmode</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetGuaranteedinvoicePaymentServiceDefinition.PaymentAction" type="String" position="2" required="false">
+			<labelKey>serviceparam.predef.novalnetguaranteedinvoice.label.paymentaction</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetguaranteedinvoice.desc.paymentaction</descriptionKey>
+			<predefined value="authorize" default="false" position="10">
+				<valueKey>serviceparam.predef.novalnetguaranteedinvoice.label.authorize</valueKey>
+			</predefined>
+			<predefined value="capture" default="true" position="20">
+				<valueKey>serviceparam.predef.novalnetguaranteedinvoice.label.capture</valueKey>
+			</predefined>
+		</parameter>
+		<parameter name="NovalnetGuaranteedinvoicePaymentServiceDefinition.AuthorizationMinAmount" type="String" position="3" required="false">
+			<labelKey>serviceparam.predef.novalnetguaranteedinvoice.label.authorizationminamount</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetguaranteedinvoice.desc.authorizationminamount</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetGuaranteedinvoicePaymentServiceDefinition.GuaranteedMinAmount" type="String" position="4" required="false">
+			<labelKey>serviceparam.predef.novalnetguaranteedinvoice.label.guaranteedminamount</labelKey>
+			<descriptionKey>serviceparam.predef.novalnetguaranteedinvoice.desc.guaranteedminamount</descriptionKey>
+		</parameter>
+		<parameter name="NovalnetGuaranteedinvoicePaymentServiceDefinition.PaymentDescription" type="String" position="5" required="false">
+		        <labelKey>serviceparam.predef.novalnetguaranteedinvoice.label.paymentdescription</labelKey>
+		        <descriptionKey>serviceparam.predef.novalnetguaranteedinvoice.desc.paymentdescription</descriptionKey>
+		</parameter>
+	</group>
+
+</definitions>

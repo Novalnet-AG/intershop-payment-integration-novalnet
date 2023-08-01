@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<components xmlns="http://www.intershop.de/component/2010">
+
+<implementation name="NovalnetGlobalConfigPaymentServiceDefinitionImpl"
+		class="com.intershop.adapter.payment.novalnet.internal.globalconfig.NovalnetGlobalConfigPaymentServiceDefinitionImpl"
+		implements="ServiceDefinition" />
+
+	<fulfill requirement="serviceDefinition" of="serviceDefinitionRegistry">
+		<instance with="ServiceDefinitionRegistry.Entry">
+			<fulfill requirement="cartridgeID" value="ac_payment_novalnet" />
+			<fulfill requirement="groupID" value="service.group.name.Payment_Services" />
+			<fulfill requirement="parameterGroupID" value="NovalnetGlobalConfigPaymentService" />
+			<fulfill requirement="serviceDefinitionID" value="NovalnetGlobalConfigPaymentServiceDefinition" />
+			<fulfill requirement="localizationKeyForName" value="payment.service.displayName.NOVALNET_MERCHANT_CONFIG" />
+			<fulfill requirement="serviceDefinition">
+				<instance with="NovalnetGlobalConfigPaymentServiceDefinitionImpl" />
+			</fulfill>
+			<fulfill requirement="ChainElementID" value="LogHandler" />
+			<fulfill requirement="ChainElementID" value="MonitorHandler" />
+		</instance>
+	</fulfill>
+	
+	<implementation name="NovalnetCreditcardPaymentServiceDefinitionImpl"
+		class="com.intershop.adapter.payment.novalnet.internal.creditcard.NovalnetCreditcardPaymentServiceDefinitionImpl"
+		implements="ServiceDefinition" />
+
+	<fulfill requirement="serviceDefinition" of="serviceDefinitionRegistry">
+		<instance with="ServiceDefinitionRegistry.Entry">
+			<fulfill requirement="cartridgeID" value="ac_payment_novalnet" />
+			<fulfill requirement="groupID" value="service.group.name.Payment_Services" />
+			<fulfill requirement="parameterGroupID" value="NovalnetCreditcardPaymentService" />
+			<fulfill requirement="serviceDefinitionID" value="NovalnetCreditcardPaymentServiceDefinition" />
+			<fulfill requirement="localizationKeyForName" value="payment.service.displayName.NOVALNET_CREDITCARD" />
+			<fulfill requirement="serviceDefinition">
+				<instance with="NovalnetCreditcardPaymentServiceDefinitionImpl" />
+			</fulfill>
+			<fulfill requirement="ChainElementID" value="LogHandler" />
+			<fulfill requirement="ChainElementID" value="MonitorHandler" />
+		</instance>
+	</fulfill>
+	
+	<implementation name="NovalnetInvoicePaymentServiceDefinitionImpl"
+		class="com.intershop.adapter.payment.novalnet.internal.invoice.NovalnetInvoicePaymentServiceDefinitionImpl"
+		implements="ServiceDefinition" />
+
+	<fulfill requirement="serviceDefinition" of="serviceDefinitionRegistry">
+		<instance with="ServiceDefinitionRegistry.Entry">
+			<fulfill requirement="cartridgeID" value="ac_payment_novalnet" />
+			<fulfill requirement="groupID" value="service.group.name.Payment_Services" />
+			<fulfill requirement="parameterGroupID" value="NovalnetInvoicePaymentService" />
+			<fulfill requirement="serviceDefinitionID" value="NovalnetInvoicePaymentServiceDefinition" />
+			<fulfill requirement="localizationKeyForName" value="payment.service.displayName.NOVALNET_INVOICE" />
+			<fulfill requirement="serviceDefinition">
+				<instance with="NovalnetInvoicePaymentServiceDefinitionImpl" />
+			</fulfill>
+			<fulfill requirement="ChainElementID" value="LogHandler" />
+			<fulfill requirement="ChainElementID" value="MonitorHandler" />
+		</instance>
+	</fulfill>
+	
+	<implementation name="NovalnetIdealPaymentServiceDefinitionImpl"
+		class="com.intershop.adapter.payment.novalnet.internal.ideal.NovalnetIdealPaymentServiceDefinitionImpl"
+		implements="ServiceDefinition" />
+
+	<fulfill requirement="serviceDefinition" of="serviceDefinitionRegistry">
+		<instance with="ServiceDefinitionRegistry.Entry">
+			<fulfill requirement="cartridgeID" value="ac_payment_novalnet" />
+			<fulfill requirement="groupID" value="service.group.name.Payment_Services" />
+			<fulfill requirement="parameterGroupID" value="NovalnetIdealPaymentService" />
+			<fulfill requirement="serviceDefinitionID" value="NovalnetIdealPaymentServiceDefinition" />
+			<fulfill requirement="localizationKeyForName" value="payment.service.displayName.NOVALNET_IDEAL" />
+			<fulfill requirement="serviceDefinition">
+				<instance with="NovalnetIdealPaymentServiceDefinitionImpl" />
+			</fulfill>
+			<fulfill requirement="ChainElementID" value="LogHandler" />
+			<fulfill requirement="ChainElementID" value="MonitorHandler" />
+		</instance>
+	</fulfill>
+	
+	<implementation name="NovalnetSepaPaymentServiceDefinitionImpl"
+		class="com.intershop.adapter.payment.novalnet.internal.sepa.NovalnetSepaPaymentServiceDefinitionImpl"
+		implements="ServiceDefinition" />
+
+<fulfill requirement="serviceDefinition" of="serviceDefinitionRegistry">
+	<instance with="ServiceDefinitionRegistry.Entry">
+		<fulfill requirement="cartridgeID" value="ac_payment_novalnet" />
+		<fulfill requirement="groupID" value="service.group.name.Payment_Services" />
+		<fulfill requirement="parameterGroupID" value="NovalnetSepaPaymentService" />
+		<fulfill requirement="serviceDefinitionID" value="NovalnetSepaPaymentServiceDefinition" />
+		<fulfill requirement="localizationKeyForName" value="payment.service.displayName.NOVALNET_SEPA" />
+		<fulfill requirement="serviceDefinition">
+			<instance with="NovalnetSepaPaymentServiceDefinitionImpl" />
+		</fulfill>
+		<fulfill requirement="ChainElementID" value="LogHandler" />
+		<fulfill requirement="ChainElementID" value="MonitorHandler" />
+	</instance>
+</fulfill>
+
+<implementation name="NovalnetPrepaymentPaymentServiceDefinitionImpl"
+		class="com.intershop.adapter.payment.novalnet.internal.prepayment.NovalnetPrepaymentPaymentServiceDefinitionImpl"
+		implements="ServiceDefinition" />
+
+<fulfill requirement="serviceDefinition" of="serviceDefinitionRegistry">
+	<instance with="ServiceDefinitionRegistry.Entry">
+		<fulfill requirement="cartridgeID" value="ac_payment_novalnet" />
+		<fulfill requirement="groupID" value="service.group.name.Payment_Services" />
+		<fulfill requirement="parameterGroupID" value="NovalnetPrepaymentPaymentService" />
+		<fulfill requirement="serviceDefinitionID" value="NovalnetPrepaymentPaymentServiceDefinition" />
+		<fulfill requirement="localizationKeyForName" value="payment.service.displayName.NOVALNET_PREPAYMENT" />
+		<fulfill requirement="serviceDefinition">
+			<instance with="NovalnetPrepaymentPaymentServiceDefinitionImpl" />
+		</fulfill>
+		<fulfill requirement="ChainElementID" value="LogHandler" />
+		<fulfill requirement="ChainElementID" value="MonitorHandler" />
+	</instance>
+</fulfill>
+
+
+<implementation name="NovalnetCashpaymentPaymentServiceDefinitionImpl"
+		class="com.intershop.adapter.payment.novalnet.internal.cashpayment.NovalnetCashpaymentPaymentServiceDefinitionImpl"
+		implements="ServiceDefinition" />
+
+<fulfill requirement="serviceDefinition" of="serviceDefinitionRegistry">
+	<instance with="ServiceDefinitionRegistry.Entry">
+		<fulfill requirement="cartridgeID" value="ac_payment_novalnet" />
+		<fulfill requirement="groupID" value="service.group.name.Payment_Services" />
+		<fulfill requirement="parameterGroupID" value="NovalnetCashpaymentPaymentService" />
+		<fulfill requirement="serviceDefinitionID" value="NovalnetCashpaymentPaymentServiceDefinition" />
+		<fulfill requirement="localizationKeyForName" value="payment.service.displayName.NOVALNET_CASHPAYMENT" />
+		<fulfill requirement="serviceDefinition">
+			<instance with="NovalnetCashpaymentPaymentServiceDefinitionImpl" />
+		</fulfill>
+		<fulfill requirement="ChainElementID" value="LogHandler" />
+		<fulfill requirement="ChainElementID" value="MonitorHandler" />
+	</instance>
+</fulfill>
+
+
+<implementation name="NovalnetGuaranteedsepaPaymentServiceDefinitionImpl"
+		class="com.intershop.adapter.payment.novalnet.internal.guaranteedsepa.NovalnetGuaranteedsepaPaymentServiceDefinitionImpl"
+		implements="ServiceDefinition" />
+
+<fulfill requirement="serviceDefinition" of="serviceDefinitionRegistry">
+	<instance with="ServiceDefinitionRegistry.Entry">
+		<fulfill requirement="cartridgeID" value="ac_payment_novalnet" />
+		<fulfill requirement="groupID" value="service.group.name.Payment_Services" />
+		<fulfill requirement="parameterGroupID" value="NovalnetGuaranteedsepaPaymentService" />
+		<fulfill requirement="serviceDefinitionID" value="NovalnetGuaranteedsepaPaymentServiceDefinition" />
+		<fulfill requirement="localizationKeyForName" value="payment.service.displayName.NOVALNET_GUARANTEEDSEPA" />
+		<fulfill requirement="serviceDefinition">
+			<instance with="NovalnetGuaranteedsepaPaymentServiceDefinitionImpl" />
+		</fulfill>
+		<fulfill requirement="ChainElementID" value="LogHandler" />
+		<fulfill requirement="ChainElementID" value="MonitorHandler" />
+	</instance>
+</fulfill>
+
+<implementation name="NovalnetGuaranteedinvoicePaymentServiceDefinitionImpl"
+		class="com.intershop.adapter.payment.novalnet.internal.guaranteedinvoice.NovalnetGuaranteedinvoicePaymentServiceDefinitionImpl"
+		implements="ServiceDefinition" />
+
+<fulfill requirement="serviceDefinition" of="serviceDefinitionRegistry">
+	<instance with="ServiceDefinitionRegistry.Entry">
+		<fulfill requirement="cartridgeID" value="ac_payment_novalnet" />
+		<fulfill requirement="groupID" value="service.group.name.Payment_Services" />
+		<fulfill requirement="parameterGroupID" value="NovalnetGuaranteedinvoicePaymentService" />
+		<fulfill requirement="serviceDefinitionID" value="NovalnetGuaranteedinvoicePaymentServiceDefinition" />
+		<fulfill requirement="localizationKeyForName" value="payment.service.displayName.NOVALNET_GUARANTEEDINVOICE" />
+		<fulfill requirement="serviceDefinition">
+			<instance with="NovalnetGuaranteedinvoicePaymentServiceDefinitionImpl" />
+		</fulfill>
+		<fulfill requirement="ChainElementID" value="LogHandler" />
+		<fulfill requirement="ChainElementID" value="MonitorHandler" />
+	</instance>
+</fulfill>
+
+<implementation name="NovalnetSofortPaymentServiceDefinitionImpl"
+		class="com.intershop.adapter.payment.novalnet.internal.sofort.NovalnetSofortPaymentServiceDefinitionImpl"
+		implements="ServiceDefinition" />
+
+<fulfill requirement="serviceDefinition" of="serviceDefinitionRegistry">
+	<instance with="ServiceDefinitionRegistry.Entry">
+		<fulfill requirement="cartridgeID" value="ac_payment_novalnet" />
+		<fulfill requirement="groupID" value="service.group.name.Payment_Services" />
+		<fulfill requirement="parameterGroupID" value="NovalnetSofortPaymentService" />
+		<fulfill requirement="serviceDefinitionID" value="NovalnetSofortPaymentServiceDefinition" />
+		<fulfill requirement="localizationKeyForName" value="payment.service.displayName.NOVALNET_SOFORT" />
+		<fulfill requirement="serviceDefinition">
+			<instance with="NovalnetSofortPaymentServiceDefinitionImpl" />
+		</fulfill>
+		<fulfill requirement="ChainElementID" value="LogHandler" />
+		<fulfill requirement="ChainElementID" value="MonitorHandler" />
+	</instance>
+</fulfill>
+
+
+<implementation name="NovalnetBanktransferPaymentServiceDefinitionImpl"
+		class="com.intershop.adapter.payment.novalnet.internal.banktransfer.NovalnetBanktransferPaymentServiceDefinitionImpl"
+		implements="ServiceDefinition" />
+
+<fulfill requirement="serviceDefinition" of="serviceDefinitionRegistry">
+	<instance with="ServiceDefinitionRegistry.Entry">
+		<fulfill requirement="cartridgeID" value="ac_payment_novalnet" />
+		<fulfill requirement="groupID" value="service.group.name.Payment_Services" />
+		<fulfill requirement="parameterGroupID" value="NovalnetBanktransferPaymentService" />
+		<fulfill requirement="serviceDefinitionID" value="NovalnetBanktransferPaymentServiceDefinition" />
+		<fulfill requirement="localizationKeyForName" value="payment.service.displayName.NOVALNET_BANKTRANSFER" />
+		<fulfill requirement="serviceDefinition">
+			<instance with="NovalnetBanktransferPaymentServiceDefinitionImpl" />
+		</fulfill>
+		<fulfill requirement="ChainElementID" value="LogHandler" />
+		<fulfill requirement="ChainElementID" value="MonitorHandler" />
+	</instance>
+</fulfill>
+
+<implementation name="NovalnetEpsPaymentServiceDefinitionImpl"
+		class="com.intershop.adapter.payment.novalnet.internal.eps.NovalnetEpsPaymentServiceDefinitionImpl"
+		implements="ServiceDefinition" />
+
+<fulfill requirement="serviceDefinition" of="serviceDefinitionRegistry">
+	<instance with="ServiceDefinitionRegistry.Entry">
+		<fulfill requirement="cartridgeID" value="ac_payment_novalnet" />
+		<fulfill requirement="groupID" value="service.group.name.Payment_Services" />
+		<fulfill requirement="parameterGroupID" value="NovalnetEpsPaymentService" />
+		<fulfill requirement="serviceDefinitionID" value="NovalnetEpsPaymentServiceDefinition" />
+		<fulfill requirement="localizationKeyForName" value="payment.service.displayName.NOVALNET_EPS" />
+		<fulfill requirement="serviceDefinition">
+			<instance with="NovalnetEpsPaymentServiceDefinitionImpl" />
+		</fulfill>
+		<fulfill requirement="ChainElementID" value="LogHandler" />
+		<fulfill requirement="ChainElementID" value="MonitorHandler" />
+	</instance>
+</fulfill>
+
+<implementation name="NovalnetGiropayPaymentServiceDefinitionImpl"
+		class="com.intershop.adapter.payment.novalnet.internal.giropay.NovalnetGiropayPaymentServiceDefinitionImpl"
+		implements="ServiceDefinition" />
+
+<fulfill requirement="serviceDefinition" of="serviceDefinitionRegistry">
+	<instance with="ServiceDefinitionRegistry.Entry">
+		<fulfill requirement="cartridgeID" value="ac_payment_novalnet" />
+		<fulfill requirement="groupID" value="service.group.name.Payment_Services" />
+		<fulfill requirement="parameterGroupID" value="NovalnetGiropayPaymentService" />
+		<fulfill requirement="serviceDefinitionID" value="NovalnetGiropayPaymentServiceDefinition" />
+		<fulfill requirement="localizationKeyForName" value="payment.service.displayName.NOVALNET_GIROPAY" />
+		<fulfill requirement="serviceDefinition">
+			<instance with="NovalnetGiropayPaymentServiceDefinitionImpl" />
+		</fulfill>
+		<fulfill requirement="ChainElementID" value="LogHandler" />
+		<fulfill requirement="ChainElementID" value="MonitorHandler" />
+	</instance>
+</fulfill>
+
+<implementation name="NovalnetPrzelewyPaymentServiceDefinitionImpl"
+		class="com.intershop.adapter.payment.novalnet.internal.przelewy.NovalnetPrzelewyPaymentServiceDefinitionImpl"
+		implements="ServiceDefinition" />
+
+<fulfill requirement="serviceDefinition" of="serviceDefinitionRegistry">
+	<instance with="ServiceDefinitionRegistry.Entry">
+		<fulfill requirement="cartridgeID" value="ac_payment_novalnet" />
+		<fulfill requirement="groupID" value="service.group.name.Payment_Services" />
+		<fulfill requirement="parameterGroupID" value="NovalnetPrzelewyPaymentService" />
+		<fulfill requirement="serviceDefinitionID" value="NovalnetPrzelewyPaymentServiceDefinition" />
+		<fulfill requirement="localizationKeyForName" value="payment.service.displayName.NOVALNET_PRZELEWY" />
+		<fulfill requirement="serviceDefinition">
+			<instance with="NovalnetPrzelewyPaymentServiceDefinitionImpl" />
+		</fulfill>
+		<fulfill requirement="ChainElementID" value="LogHandler" />
+		<fulfill requirement="ChainElementID" value="MonitorHandler" />
+	</instance>
+</fulfill>
+
+<implementation name="NovalnetPostfinancePaymentServiceDefinitionImpl"
+		class="com.intershop.adapter.payment.novalnet.internal.postfinance.NovalnetPostfinancePaymentServiceDefinitionImpl"
+		implements="ServiceDefinition" />
+
+<fulfill requirement="serviceDefinition" of="serviceDefinitionRegistry">
+	<instance with="ServiceDefinitionRegistry.Entry">
+		<fulfill requirement="cartridgeID" value="ac_payment_novalnet" />
+		<fulfill requirement="groupID" value="service.group.name.Payment_Services" />
+		<fulfill requirement="parameterGroupID" value="NovalnetPostfinancePaymentService" />
+		<fulfill requirement="serviceDefinitionID" value="NovalnetPostfinancePaymentServiceDefinition" />
+		<fulfill requirement="localizationKeyForName" value="payment.service.displayName.NOVALNET_POSTFINANCE" />
+		<fulfill requirement="serviceDefinition">
+			<instance with="NovalnetPostfinancePaymentServiceDefinitionImpl" />
+		</fulfill>
+		<fulfill requirement="ChainElementID" value="LogHandler" />
+		<fulfill requirement="ChainElementID" value="MonitorHandler" />
+	</instance>
+</fulfill>
+
+
+<implementation name="NovalnetPostfinancecardPaymentServiceDefinitionImpl"
+		class="com.intershop.adapter.payment.novalnet.internal.postfinancecard.NovalnetPostfinancecardPaymentServiceDefinitionImpl"
+		implements="ServiceDefinition" />
+
+<fulfill requirement="serviceDefinition" of="serviceDefinitionRegistry">
+	<instance with="ServiceDefinitionRegistry.Entry">
+		<fulfill requirement="cartridgeID" value="ac_payment_novalnet" />
+		<fulfill requirement="groupID" value="service.group.name.Payment_Services" />
+		<fulfill requirement="parameterGroupID" value="NovalnetPostfinancecardPaymentService" />
+		<fulfill requirement="serviceDefinitionID" value="NovalnetPostfinancecardPaymentServiceDefinition" />
+		<fulfill requirement="localizationKeyForName" value="payment.service.displayName.NOVALNET_POSTFINANCECARD" />
+		<fulfill requirement="serviceDefinition">
+			<instance with="NovalnetPostfinancecardPaymentServiceDefinitionImpl" />
+		</fulfill>
+		<fulfill requirement="ChainElementID" value="LogHandler" />
+		<fulfill requirement="ChainElementID" value="MonitorHandler" />
+	</instance>
+</fulfill>
+
+<implementation name="NovalnetBancontactPaymentServiceDefinitionImpl"
+		class="com.intershop.adapter.payment.novalnet.internal.bancontact.NovalnetBancontactPaymentServiceDefinitionImpl"
+		implements="ServiceDefinition" />
+
+<fulfill requirement="serviceDefinition" of="serviceDefinitionRegistry">
+	<instance with="ServiceDefinitionRegistry.Entry">
+		<fulfill requirement="cartridgeID" value="ac_payment_novalnet" />
+		<fulfill requirement="groupID" value="service.group.name.Payment_Services" />
+		<fulfill requirement="parameterGroupID" value="NovalnetBancontactPaymentService" />
+		<fulfill requirement="serviceDefinitionID" value="NovalnetBancontactPaymentServiceDefinition" />
+		<fulfill requirement="localizationKeyForName" value="payment.service.displayName.NOVALNET_BANCONTACT" />
+		<fulfill requirement="serviceDefinition">
+			<instance with="NovalnetBancontactPaymentServiceDefinitionImpl" />
+		</fulfill>
+		<fulfill requirement="ChainElementID" value="LogHandler" />
+		<fulfill requirement="ChainElementID" value="MonitorHandler" />
+	</instance>
+</fulfill>
+
+<implementation name="NovalnetMultibancoPaymentServiceDefinitionImpl"
+		class="com.intershop.adapter.payment.novalnet.internal.multibanco.NovalnetMultibancoPaymentServiceDefinitionImpl"
+		implements="ServiceDefinition" />
+
+<fulfill requirement="serviceDefinition" of="serviceDefinitionRegistry">
+	<instance with="ServiceDefinitionRegistry.Entry">
+		<fulfill requirement="cartridgeID" value="ac_payment_novalnet" />
+		<fulfill requirement="groupID" value="service.group.name.Payment_Services" />
+		<fulfill requirement="parameterGroupID" value="NovalnetMultibancoPaymentService" />
+		<fulfill requirement="serviceDefinitionID" value="NovalnetMultibancoPaymentServiceDefinition" />
+		<fulfill requirement="localizationKeyForName" value="payment.service.displayName.NOVALNET_MULTIBANCO" />
+		<fulfill requirement="serviceDefinition">
+			<instance with="NovalnetMultibancoPaymentServiceDefinitionImpl" />
+		</fulfill>
+		<fulfill requirement="ChainElementID" value="LogHandler" />
+		<fulfill requirement="ChainElementID" value="MonitorHandler" />
+	</instance>
+</fulfill>
+
+<implementation name="NovalnetPaypalPaymentServiceDefinitionImpl"
+		class="com.intershop.adapter.payment.novalnet.internal.paypal.NovalnetPaypalPaymentServiceDefinitionImpl"
+		implements="ServiceDefinition" />
+
+<fulfill requirement="serviceDefinition" of="serviceDefinitionRegistry">
+	<instance with="ServiceDefinitionRegistry.Entry">
+		<fulfill requirement="cartridgeID" value="ac_payment_novalnet" />
+		<fulfill requirement="groupID" value="service.group.name.Payment_Services" />
+		<fulfill requirement="parameterGroupID" value="NovalnetPaypalPaymentService" />
+		<fulfill requirement="serviceDefinitionID" value="NovalnetPaypalPaymentServiceDefinition" />
+		<fulfill requirement="localizationKeyForName" value="payment.service.displayName.NOVALNET_PAYPAL" />
+		<fulfill requirement="serviceDefinition">
+			<instance with="NovalnetPaypalPaymentServiceDefinitionImpl" />
+		</fulfill>
+		<fulfill requirement="ChainElementID" value="LogHandler" />
+		<fulfill requirement="ChainElementID" value="MonitorHandler" />
+	</instance>
+</fulfill>
+
+<implementation name="NovalnetTrustlyPaymentServiceDefinitionImpl"
+		class="com.intershop.adapter.payment.novalnet.internal.trustly.NovalnetTrustlyPaymentServiceDefinitionImpl"
+		implements="ServiceDefinition" />
+<fulfill requirement="serviceDefinition" of="serviceDefinitionRegistry">
+	<instance with="ServiceDefinitionRegistry.Entry">
+		<fulfill requirement="cartridgeID" value="ac_payment_novalnet" />
+		<fulfill requirement="groupID" value="service.group.name.Payment_Services" />
+		<fulfill requirement="parameterGroupID" value="NovalnetTrustlyPaymentService" />
+		<fulfill requirement="serviceDefinitionID" value="NovalnetTrustlyPaymentServiceDefinition" />
+		<fulfill requirement="localizationKeyForName" value="payment.service.displayName.NOVALNET_TRUSTLY" />
+		<fulfill requirement="serviceDefinition">
+			<instance with="NovalnetTrustlyPaymentServiceDefinitionImpl" />
+		</fulfill>
+		<fulfill requirement="ChainElementID" value="LogHandler" />
+		<fulfill requirement="ChainElementID" value="MonitorHandler" />
+	</instance>
+</fulfill>
+	
+	
+	</components>

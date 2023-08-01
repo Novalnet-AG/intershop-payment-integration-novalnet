@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--my sample pipeline-->
+
+<pipeline:Pipeline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pipeline="http://www.intershop.de/pipeline/2010"
+    name="NovalnetWebhook" overrideMode="Inherit" type="view">
+<!--@Location 0,0-->
+  <nodes xsi:type="pipeline:StartNode" nodeID="StartNode_Q2bYELNcEe2tp4JA-_bVhA" name="Start">
+    <nodeSuccessors name="next" next="StartSafeChangesBlock0"/>
+  </nodes>
+<!--@Location 0,3-->
+  <nodes xsi:type="pipeline:PipeletNode" nodeID="StartSafeChangesBlock0">
+    <pipelet href="enfinity:/core/pipelets/StartSafeChangesBlock.xml"/>
+    <nodeSuccessors name="next" next="NovalnetWebhookHandler"/>
+    <parameterBindings name="ServiceConfigurationBORepository" objectPath="ApplicationBO:Repository(&quot;ServiceConfigurationBORepository&quot;)"/>
+  </nodes>
+<!--@Location 0,1-->
+  <nodes xsi:type="pipeline:PipeletNode" nodeID="NovalnetWebhookHandler">
+    <pipelet href="enfinity:/ac_payment_novalnet/pipelets/NovalnetWebhookHandler.xml"/>
+    <nodeSuccessors name="next" next="CallNode0"/>
+<!--@BendPoints 3,3-->
+    <nodeSuccessors name="pipelet_error" next="PrepareApplicationView_ukMMALNdEe2tp4JA-_bVhA"/>
+  </nodes>
+<!--@Location 0,3-->
+  <nodes xsi:type="pipeline:CallNode" nodeID="CallNode0">
+    <nodeSuccessors name="next" next="JoinNode_VfhVwB9cEeePRK80YI41Pg"/>
+    <nodeSuccessors name="Error" next="JoinNode_VfhVwB9cEeePRK80YI41Pg"/>
+    <nodeSuccessors name="Pending" next="JoinNode_VfhVwB9cEeePRK80YI41Pg"/>
+    <startNode referencedName="ProcessPayment-Notify"/>
+  </nodes>
+<!--@Location 0,0-->
+  <nodes xsi:type="pipeline:JoinNode" nodeID="JoinNode_VfhVwB9cEeePRK80YI41Pg">
+    <nodeSuccessors name="next" next="EndSafeChangesBlock0"/>
+  </nodes>
+<!--@Location 0,0-->
+  <nodes xsi:type="pipeline:PipeletNode" nodeID="EndSafeChangesBlock0">
+    <pipelet href="enfinity:/core/pipelets/EndSafeChangesBlock.xml"/>
+    <nodeSuccessors name="next" next="PrepareApplicationView_sR6AULNdEe2tp4JA-_bVhA"/>
+  </nodes>
+<!--@Location 0,4-->
+  <nodes xsi:type="pipeline:PipeletNode" nodeID="PrepareApplicationView_sR6AULNdEe2tp4JA-_bVhA">
+    <configurationValues name="WorkingTemplate" value="NovalnetWebhookSuccess"/>
+    <pipelet href="enfinity:/bc_foundation/pipelets/PrepareApplicationView.xml"/>
+    <nodeSuccessors name="next" next="JoinNode_1EYikLNdEe2tp4JA-_bVhA"/>
+  </nodes>
+<!--@Location 0,5-->
+  <nodes xsi:type="pipeline:JoinNode" nodeID="JoinNode_1EYikLNdEe2tp4JA-_bVhA">
+    <nodeSuccessors name="next" next="InteractionNode_Q2bYEbNcEe2tp4JA-_bVhA"/>
+  </nodes>
+<!--@Location 0,6-->
+  <nodes xsi:type="pipeline:InteractionNode" nodeID="InteractionNode_Q2bYEbNcEe2tp4JA-_bVhA">
+    <template referencedName="NovalnetWebhookSuccess"/>
+  </nodes>
+<!--@Location 1,2-->
+  <nodes xsi:type="pipeline:PipeletNode" nodeID="PrepareApplicationView_ukMMALNdEe2tp4JA-_bVhA">
+    <configurationValues name="WorkingTemplate" value="NovalnetWebhookError"/>
+    <pipelet href="enfinity:/bc_foundation/pipelets/PrepareApplicationView.xml"/>
+<!--@BendPoints 3,7-->
+    <nodeSuccessors name="next" next="JoinNode_1EYikLNdEe2tp4JA-_bVhA"/>
+  </nodes>
+</pipeline:Pipeline>

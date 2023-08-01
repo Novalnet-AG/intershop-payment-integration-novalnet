@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extensionpoint:ExtensionPointModel xmlns:extensionpoint="http://www.intershop.de/extensionpoint/2011"
+    name="NNDisplayError">
+  <extensionBindings type="isml" extensionPoint="checkout/payment/CheckoutPayment-PaymentErrors"
+      extension="payment_novalnet/DisplayPaymentError"/>
+</extensionpoint:ExtensionPointModel>

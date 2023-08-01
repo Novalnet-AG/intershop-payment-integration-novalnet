@@ -1,0 +1,24 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+
+<isif condition="#hasLoopElements(OrderPayment:PaymentTransactionBOs)#">
+	<isloop iterator="OrderPayment:PaymentTransactionBOs" alias="PTBO">
+		<isif condition="#isDefined(PTBO:PaymentBO:PaymentServiceBO:PaymentServiceID)#">
+		<isset scope="request" name="paymentMethodPrefix" value = "#pad(PTBO:PaymentBO:PaymentServiceBO:PaymentServiceID,-8)#">
+			<isif condition="#paymentMethodPrefix EQ 'NOVALNET'#">
+				<isif condition="#hasElements(PTBO:PaymentHistoryEntryBOs)#">
+					<isloop iterator="PTBO:PaymentHistoryEntryBOs" alias="PH">
+						<isif condition="#(PH:EventID EQ 'RedirectAfterCheckout') OR (PH:EventID EQ 'CaptureNotification') OR (PH:EventID EQ 'CancelNotification') OR (PH:EventID EQ 'RefundNotification') OR (PH:EventID EQ 'RedirectAfterCheckoutNotification') OR (PH:EventID EQ 'Cancel')#">
+							<isset name="LoggedData" value="#PH:LoggedData#" scope="request" />
+								<isif condition="#(isDefined(LoggedData:get("Novalnet Transaction Details"))) OR ((PH:EventID EQ 'RedirectAfterCheckout') AND isDefined(LoggedData:get("RedirectStatus")))#">
+									<div style="white-space:pre-line">
+										<isprint value="#LoggedData:get("Novalnet Transaction Details")#">
+										<br>
+									</div>
+								</isif>
+						</isif>
+					</isloop>
+				</isif>
+			</isif>
+		</isif>
+	</isloop>
+</isif>

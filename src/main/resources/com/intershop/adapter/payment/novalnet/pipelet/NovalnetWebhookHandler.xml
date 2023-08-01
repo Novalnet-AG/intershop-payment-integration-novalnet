@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DPipelet dbo.type="com.intershop.beehive.core.rapi.pipeline.DPipelet" id="Pipelet1">
+<pipeletName>NovalnetWebhookHandler</pipeletName>
+<pipeletClass>com.intershop.adapter.payment.novalnet.pipelet.NovalnetWebhookHandler</pipeletClass>
+<errorConnector>true</errorConnector>
+<properties>
+<DPipeletProperty dbo.type="com.intershop.beehive.core.rapi.pipeline.DPipeletProperty" id="dictionary_PaymentID" >
+<key>PaymentID</key>
+<propertyClass>java.lang.String</propertyClass>
+<group>dictionary-in</group>
+</DPipeletProperty>
+<DPipeletProperty dbo.type="com.intershop.beehive.core.rapi.pipeline.DPipeletProperty" id="dictionary-OrderID" >
+<key>OrderID</key>
+<input>required</input>
+<output>guaranteed</output>
+<propertyClass>java.lang.String</propertyClass>
+<group>dictionary-in</group>
+</DPipeletProperty>
+<DPipeletProperty dbo.type="com.intershop.beehive.core.rapi.pipeline.DPipeletProperty" id="dictionary-PaymentID" >
+<key>PaymentID</key>
+<input>required</input>
+<output>guaranteed</output>
+<propertyClass>java.lang.String</propertyClass>
+<group>dictionary-out</group>
+</DPipeletProperty>
+<DPipeletProperty dbo.type="com.intershop.beehive.core.rapi.pipeline.DPipeletProperty" id="dictionary-OrderID" >
+<key>OrderID</key>
+<input>required</input>
+<output>guaranteed</output>
+<propertyClass>java.lang.String</propertyClass>
+<group>dictionary-out</group>
+</DPipeletProperty>
+<DPipeletProperty dbo.type="com.intershop.beehive.core.rapi.pipeline.DPipeletProperty" id="dictionary-AdditionalParameters" >
+<key>AdditionalParameters</key>
+<input>required</input>
+<output>guaranteed</output>
+<propertyClass>java.util.Map</propertyClass>
+<group>dictionary-out</group>
+</DPipeletProperty>
+</properties>
+</DPipelet>

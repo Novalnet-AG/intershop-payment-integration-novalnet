@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<components xmlns="http://www.intershop.de/component/2010" scope="global">
+    <fulfill requirement="selectedCartridge" value="ac_payment_novalnet" of="intershop.EnterpriseBackoffice.Cartridges"/>
+    <fulfill requirement="selectedCartridge" value="ac_payment_novalnet" of="intershop.B2CResponsive.Cartridges"/>
+    <fulfill requirement="selectedCartridge" value="ac_payment_novalnet" of="intershop.SLDSystem.Cartridges"/>
+</components>

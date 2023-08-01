@@ -1,0 +1,44 @@
+apply plugin: 'java-cartridge'
+apply plugin: 'static-cartridge'
+apply plugin: 'com.intershop.gradle.cartridge-resourcelist'
+apply plugin: 'com.intershop.gradle.isml'
+
+intershop {
+    displayName = 'Adapter - Novalnet Payment'
+
+    packages {
+        cartridge {
+            srcDir(isml2classMain)
+        }
+    }
+}
+
+dependencies {
+    
+    compile group: 'com.intershop.platform', name: 'servletengine'
+    compile group: 'com.intershop.platform', name: 'isml'
+    compile group: 'com.intershop.platform', name: 'bc_address'
+    compile group: 'com.intershop.platform', name: 'bc_region'
+    compile group: 'com.intershop.platform', name: 'app'
+    compile group: 'com.intershop.platform', name: 'businessobject'    
+    compile group: 'com.intershop.platform', name: 'core'
+    compile group: 'com.intershop.platform', name: 'bc_service'
+    compile group: 'com.intershop.platform', name: 'configuration'
+    compile group: 'com.intershop.platform', name: 'jmx'
+    compile group: 'com.intershop.platform', name: 'pf_property'
+    compile group: 'com.intershop.platform', name: 'orm'
+    compile group: 'com.intershop.platform', name: 'pf_objectgraph'
+    compile group: 'com.intershop.platform', name: 'pf_objectgraph_guice'
+    compile group: 'com.intershop.platform', name: 'ui_web_library'
+    compile group: 'com.intershop.platform', name: 'bc_application'
+    compile group: 'com.intershop.platform', name: 'bc_repository'    
+    compile group: 'com.intershop', name: 'api_service'
+
+    compile 'org.apache.httpcomponents:httpcore'
+    compile 'org.apache.httpcomponents:httpclient'
+    compile 'com.google.code.gson:gson:2.8.2'
+    
+    testCompile group: 'com.intershop.platform', name: 'pf_property_test'
+    testCompile group: 'com.intershop.platform', name: 'pf_objectgraph_test'
+    testCompile group: 'com.intershop.platform', name: 'pf_core_test'
+}
