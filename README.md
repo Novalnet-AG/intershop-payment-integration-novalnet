@@ -57,16 +57,16 @@ Easy installation of Novalnet payment service connector for Intershop will be do
 See our License Agreement at: https://www.novalnet.com/payment-plugins-free-license/
 
 ## Documentation & Support
+For more information about the Intershop Payment Integration by Novalnet, please get in touch with us: <a href="mailto:sales@novalnet.de"> sales@novalnet.de </a> or +49 89 9230683-20<br>
 
-If you have any inquiries, please contact one of the following departments:
-
-### Technical support 
-technic@novalnet.de <br>
-+49 89 9230683-19
-
-### Sales team 
-sales@novalnet.de <br>
-+49 89 9230683-20
+Novalnet AG<br>
+Zahlungsinstitut (ZAG)<br>
+Gutenbergstraße 7<br>
+D-85748 Garching<br>
+Deutschland<br>
+E-mail: sales@novalnet.de<br>
+Tel: +49 89 9230683-20<br>
+Web: www.novalnet.de
 
 ## Who is Novalnet?
  
